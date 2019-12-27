@@ -77,7 +77,7 @@ class Hashmap {
         int which_bucket(unsigned int key) {
             unsigned int idx = key & (N-1);
             if (idx < next) {
-                idx |= key & (N << 1);
+                idx |= key & N;
             }
             return idx;
         }
